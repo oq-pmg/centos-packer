@@ -22,7 +22,7 @@
 	],
 	"boot_wait": "10s",
 	"boot_command": [
-	  "<up><tab> text ks=https://raw.githubusercontent.com/oq-pmg/hello-world/master/ks.cfg<enter>",
+	  "<up><tab> text ks=https://github.com/oq-pmg/centos-packer/raw/master/ks.cfg<enter>",
 	  ""
 	  ]
 	}]
