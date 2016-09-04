@@ -25,5 +25,12 @@
 	  "<up><tab> text ks=https://github.com/oq-pmg/centos-packer/raw/master/ks.cfg<enter>",
 	  ""
 	  ]
-	}]
+	}],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 30",
+      "yum install puppet"
+    ]
+  }]
 }
