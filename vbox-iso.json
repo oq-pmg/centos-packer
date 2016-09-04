@@ -1,0 +1,29 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [{
+	"type": "virtualbox-iso",
+	"guest_os_type": "RedHat_64",
+	"iso_url": "http://centos.koyanet.lv/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
+	"iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
+	"iso_checksum_type": "md5",
+	"ssh_username": "root",
+	"ssh_password": "Root123!",
+	"ssh_wait_timeout": "240s",
+	"shutdown_command": "shutdown -P now",
+	"vboxmanage": [
+		["modifyvm", "{{.Name}}", "--memory", "2048"],
+		["modifyvm", "{{.Name}}", "--cpus", "2"],
+		["modifyvm", "{{.Name}}", "--audio", "none"],
+		["modifyvm", "{{.Name}}", "--keyboard", "ps2"],
+		["modifyvm", "{{.Name}}", "--usb", "off"]
+	],
+	"boot_wait": "10s",
+	"boot_command": [
+	  "<up><tab> text ks=https://raw.githubusercontent.com/oq-pmg/hello-world/master/ks.cfg<enter>",
+	  ""
+	  ]
+	}]
+}
