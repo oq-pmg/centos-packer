@@ -30,7 +30,8 @@
     "type": "shell",
     "inline": [
       "sleep 30",
-      "yum install puppet"
+      "yum install -y epel-release"
+      "yum install -y puppet"
     ]
   }]
 }
