@@ -31,9 +31,9 @@ CM approach - guarantee certain state of environment (here - presense/absence of
 |Approach|Pro's|Con's|
 |---|---|---|
 |Kickstart| Less maintenance overhead; Can provide guarantee of packages to install (w/o --ignoremissing) | Can't guarantee packages to be removed (?) |
-|CM tool| Designed to maintain state | Support overhead; Separating initial requirements from further state changes will make things more complex => less stable |
+|CM tool| Designed to maintain state; Can execute standalone policy/manifest file | Support overhead; Separating initial requirements from further state changes will make things more complex => less stable |
 
-**Decision:** rely on Kickstart for removing un-necessary packages during installation process. Consider some automated test to verify initial state matches desired state.
+**Decision:** 
 
 ## CM Tool: Puppet vs. CFengine
 |Solution|Pro's|Con's|
