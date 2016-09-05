@@ -1,4 +1,4 @@
-# centos-packer
+# Concept
 Prerequisites:
 
 1. Windows 7
@@ -16,3 +16,20 @@ To Do:
 
 1. Kickstart file
 2. Packer template
+
+# Decisions
+
+## Optional packages removal: Kickstart vs. CM tool (Puppet, CFengine etc)
+
+Initial OS state shouldn't be maintained - that is, stripped down image used to deploy some useful workloads, therefore state will change.
+
+Kickstart approach - exclude set of packages from default bundle once, don't care about maintaining state. 
+
+CM approach - guarantee certain state of environment (here - presense/absence of packages). Adding workloads will require to review and update CM guarantees (including dependency handling).
+
+|Approach|Pro's|Con's|
+|---|---|---|
+|Kickstart| Less maintenance overhead; Can provide guarantee of packages to install (w/o --ignoremissing) | Can't guarantee packages to be removed (?) |
+|CM tool| Designed to maintain state | Support overhead; Separating initial requirements from further state changes will make things more complex => less stable |
+
+**Decision:** rely on Kickstart for removing un-necessary packages during installation process. Consider some automated test to verify initial state matches desired state.
