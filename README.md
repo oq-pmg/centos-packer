@@ -39,7 +39,7 @@ CM approach - guarantee certain state of environment (here - presense/absence of
 |Solution|Pro's|Con's|
 |---|---|---|
 |Puppet| Huge community; Windows+Linux support (MOF) | Developed since 2005 |
-|CFengine| Developed since 1993; A lot of sientific research behind the product | Small community; Lack of Windows support |
+|CFengine| Developed since 1993; A lot of sientific research behind the product | Small community; Poor Windows support in Community Edition |
 
 **Decision:** Puppet
 
