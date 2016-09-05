@@ -11,6 +11,7 @@ Target: setup Minimal CentOS 7.2 environment, stripped down to following working
 3. Working network (dhclient)
 4. Working yum
 5. Running sshd service
+6. Minimize attack/vulnerability surface to reduce maintenance
 
 To Do:
 
@@ -33,3 +34,20 @@ CM approach - guarantee certain state of environment (here - presense/absence of
 |CM tool| Designed to maintain state | Support overhead; Separating initial requirements from further state changes will make things more complex => less stable |
 
 **Decision:** rely on Kickstart for removing un-necessary packages during installation process. Consider some automated test to verify initial state matches desired state.
+
+## CM Tool: Puppet vs. CFengine
+|Solution|Pro's|Con's|
+|---|---|---|
+|Puppet| Huge community; Windows+Linux support (MOF) | Developed since 2005 |
+|CFengine| Developed since 1993; A lot of sientific research behind the product | Small community; Lack of Windows support |
+
+**Decision:** Puppet
+
+## Puppet packaging: Upstream (CentOS) vs. Vendor (PuppetLabs)
+
+|Approach|Pro's|Con's|
+|---|---|---|
+|CentOS| Consistent security patches | Version lag |
+|PuppetLabs| Most recent version available | No guarantee for dependent packages to be updated |
+
+**Decision:**
