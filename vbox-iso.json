@@ -1,6 +1,6 @@
 {
   "variables": {
-    "ks_location": "https://github.com/oq-pmg/centos-packer/raw/master/ks.cfg",
+    "ks_location": "https://github.com/oq-pmg/centos-packer/raw/cm_tool/ks.cfg",
     "puppet_location": "https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm",
     "cleanup_location": "https://github.com/oq-pmg/centos-packer/raw/cm_tool/cleanup.pp",
     "aws_access_key": "",
