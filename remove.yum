@@ -15,10 +15,15 @@ biosdevname
 btrfs-progs
 dbus-glib
 dbus-python
+device-mapper-event
+device-mapper-event-libs
+device-mapper-persistent-data
 dmidecode
 dnsmasq
 dracut-config-rescue
 dracut-network
+e2fsprogs
+e2fsprogs-libs
 ebtables
 ethtool
 firewalld
@@ -54,6 +59,7 @@ kbd-legacy
 kbd-misc
 kernel-tools-libs
 kexec-tools
+libaio
 libdaemon
 libdrm
 libedit
@@ -70,9 +76,14 @@ libproxy
 libselinux-python
 libselinux-utils
 libsoup
+libss
+libsysfs
 libteam
 logrotate
 lsscsi
+lvm2
+lvm2-libs
+lzo
 make
 man-db
 mariadb-libs
@@ -107,6 +118,7 @@ slang
 snappy
 sudo
 systemd-sysv
+tar
 teamd
 trousers
 tuned
