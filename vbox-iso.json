@@ -38,6 +38,6 @@
     ]
   },{
   "type": "puppet-masterless",
-  "manifest_file": "/root/cleanup.pp"
+  "manifest_file": "cleanup.pp"
 }]
 }
