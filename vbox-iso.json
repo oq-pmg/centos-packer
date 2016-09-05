@@ -1,5 +1,7 @@
 {
   "variables": {
+    "ks_location": "https://github.com/oq-pmg/centos-packer/raw/master/ks.cfg",
+    "puppet_location": "https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm",
     "aws_access_key": "",
     "aws_secret_key": ""
   },
@@ -22,7 +24,7 @@
 	],
 	"boot_wait": "10s",
 	"boot_command": [
-	  "<up><tab> text ks=https://github.com/oq-pmg/centos-packer/raw/master/ks.cfg<enter>",
+	  "<up><tab> text ks={{user `ks_location`}}<enter>",
 	  ""
 	  ]
 	}],
@@ -30,7 +32,7 @@
     "type": "shell",
     "inline": [
       "sleep 30",
-      "rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm",
+      "rpm -Uvh {{user `puppet_location`}}",
       "yum install -y puppet-agent",
       "sleep 30"
     ]
