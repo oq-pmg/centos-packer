@@ -81,8 +81,6 @@ libsysfs
 libteam
 logrotate
 lsscsi
-lvm2
-lvm2-libs
 lzo
 make
 man-db
